@@ -222,14 +222,18 @@ https://lamport.azurewebsites.net/video/videos.html
 
 
 # Code Injection
-[Link Code Injection](https://en.wikipedia.org/wiki/Code_injection) is a category of system exploitation where code is input into the system to produce unintended system results. 
+[Code Injection](https://en.wikipedia.org/wiki/Code_injection) is a category of system exploitation where code is input into the system to produce unintended system results. The "unintended system result" is only unintended in the mind of the system designer. For the attacker, this is an opportunity to bend the system to their will in order to achieve their objectives.
 For a code injection vulnerability to occur, the following must be true:
 * there must be a way for the attacker to introduce the code into the system with it being blocked.
 * the code must travel through the system to an execution environment where it executed by an interpreter.
 
+Defensive mindset.
+* The system design should highlight every execution site in the system and the format(s) of code understood by that execution site.
+* If the execution site isn't needed, then turn it off. Consider a simpler technology if the execution site can't be turned off.
+* Map all the possible flows through the system from input site to execution site.
+* Implement code blocking approaches and design+implementation choices to stop an injected code making it 
 
-
-Code Injection is a 
+There are different forms of code injection that are particular to the system design. 
 
 
 # XSS - Cross site scripting.
