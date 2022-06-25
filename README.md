@@ -235,5 +235,40 @@ Defensive mindset.
 
 There are different forms of code injection that are particular to the system design. 
 
+# Command Execution
+
+Example: From DVWA Command Execution
+Intended Input ( Design ):  IP Address XXX.XXX.XXX.XXX
+Intended System Result: Ping Ip Address and display result
+Attacker Input: IP;Unix Command 1;Unix Command 2
+Execution Interpreter: Linux shell
+
+Flawed PseduoCode
+=================
+
+func PingIP ( String in ipAddress ) {
+    String executionStr = "ping " + ipAddress;
+    system.exec(executionStr);
+}
+
+What's the problem?
+====================
+The developer only focused on the happy path. i.e. perfect and non malicious input.
+Instead, check that the incoming string is an ipadress and nothing else.
+
+The tricky bits
+================
+use of ; to add run on commands. Knowing that there is a linux shell on the
+
+Reverse shell
+=============
+If the execution interpreter is a shell or gives access to a shell
+- the hacker can run netcat ( nc ) on their machine listening for a connection on a port
+nc -vv -l -p 8080
+
+Now inject a command that uses nc to execute a shell and connect back to the attackers machine.
+The hacker now can execute commands from their machine that execute commands on the remote machine.
+
+
 
 # XSS - Cross site scripting.
