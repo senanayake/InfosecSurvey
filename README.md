@@ -69,12 +69,6 @@ Docker HAcking
 https://www.hacker101.com/sessions/docker_hacking
 
 
-Certificate search for ameriprise.
-
-https://crt.sh/?q=%25.ameriprise.com
-
-https://crt.sh/?O=ameriprise
-Can be output in json
 
 Send requests via python
 
